@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+    <title>Login System</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form" method="POST">
+        {% csrf_token %}
+        <h2>Login</h2>
+        
+        <div class="form-control" >
+          <label for="username">Username</label>
+          <input type="text" name="username" placeholder="Enter username" {%for message in messages%}{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}style="border-color:red;"{% endif %}{%endfor%}/>
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <small>{{message}}</small>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Enter password" {%for message in messages%}{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}style="border-color:red;"{% endif %}{%endfor%} />
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+          <small>{{message}}</small>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <input id="button" type="submit" value="Submit" />        
+        <p>Don't have an account?  <a href="register" style="color:#3498db;">Register Here</a></p>
+      </form>
+    </div>
+  </body>
+</html>

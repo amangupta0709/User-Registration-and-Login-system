@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+    <title>Login System</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form" method="POST">
+        {% csrf_token %}
+        {% for message in messages %}
+        <p style="color:green;font-size:25px;font-weight:bold;"> {{message}} </p>
+        {% if user.is_authenticated %}
+        <p>Click  <a href="logout/success" style="color:#3498db;">Here</a> to LOGOUT</p>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+        <p>Click  <a href="/" style="color:#3498db;">Here</a> to LOGIN</p>
+        {% endif %}
+        {% endfor %}
+      </form>
+    </div>
+  </body>
+</html>

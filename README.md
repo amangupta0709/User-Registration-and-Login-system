@@ -2,14 +2,14 @@
 a user registration and login logout system using Django and Postgresql Database
 
 ### Initialize the project
-Create and activate a virtualenv:
-<pre>
+
+##### Create and activate a virtualenv:
+
 1. `virtualenv venv`. This will a create a vitual environment called "venv" that helps with controlling dependencies.
 2. `source venv/bin/activate`. 
-</pre>
 
 
-Install dependencies:
+##### Install dependencies:
 
 (while in the activated virtual environment)
 ```bash
@@ -18,14 +18,16 @@ pip install -r requirements.txt
 NOTE: After installing dependencies, pip-tools is also installed. You can now use it to manage package dependencies of your project.
 
 Add a new package to requirements.in and run the following command to auto-update requirements.txt file
-`pip-compile requirements.in`
-
+```bash
+pip-compile requirements.in
+```
 
 Run the following command to sync your virtualenv
-`pip-sync`
+```bash
+pip-sync`
+```
 
-
-Migrate, create a superuser, and run the server:
+##### Migrate, create a superuser, and run the server:
 ```bash
 python manage.py makemigrations
 python manage.py migrate

@@ -3,9 +3,11 @@ a user registration and login logout system using Django and Postgresql Database
 
 ### Initialize the project
 Create and activate a virtualenv:
+<pre>
+1. `virtualenv venv`. This will a create a vitual environment called "venv" that helps with controlling dependencies.
+2. `source venv/bin/activate`. 
+</pre>
 
-`virtualenv venv`. This will a create a vitual environment called "venv" that helps with controlling dependencies.
-`source venv/bin/activate`. 
 
 Install dependencies:
 

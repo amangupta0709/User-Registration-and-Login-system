@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'DjangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'form-validation',
+        'NAME': 'database name',
         'USER': 'postgres',
-        'PASSWORD': '0709',
+        'PASSWORD': 'postgresql password',
         'HOST': 'localhost',
     }
 }

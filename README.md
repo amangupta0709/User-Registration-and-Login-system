@@ -5,7 +5,7 @@ a user registration and login logout system using Django and Postgresql Database
 
 ##### Create and activate a virtualenv:
 
-1. `virtualenv venv`. This will a create a vitual environment called "venv" that helps with controlling dependencies.
+1. `virtualenv venv`. This will a create a vitual environment called "venv" that helps with controlling dependencies.(For windows run `mkvirtualenv venv`)
 2. `source venv/bin/activate`. (For windows run `workon venv`)
 
 
